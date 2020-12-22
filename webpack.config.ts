@@ -9,7 +9,7 @@ const externals: webpack.Configuration["externals"] = ([] as string[])
   .reduce((externalsMap, moduleName) => {
     externalsMap[moduleName] = moduleName;
     return externalsMap;
-  }, {} as webpack.ExternalsObjectElement);
+  }, {} as { [k: string]: string });
 
 const config: webpack.Configuration = {
   mode: "production",
