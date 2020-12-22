@@ -10,7 +10,7 @@ const errorResponse = (message: string, code = 500): AWSLambda.APIGatewayProxyRe
 export default async (event: AWSLambda.APIGatewayEvent): Promise<AWSLambda.APIGatewayProxyResult> => {
   const headers = downcaseKeys(event.headers);
 
-  if (!/^application\/json\b/.test(headers["Content-Type"]) || !event.body) {
+  if (!/^application\/json\b/.test(headers["content-type"] || "") || !event.body) {
     return errorResponse("Only JSON payloads are accepted", 406);
   }
 

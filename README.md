@@ -16,7 +16,7 @@ Write any Lambda functions you want in `src/`. An example of a Lambda that takes
 yarn run build
 ```
 
-This will compile function and output them into `dist/`. You can then zip them all up together or individually depending on your needs. Deploy by manually uploading, [aws-cli](https://aws.amazon.com/cli/), or with a tool like [Terraform](https://terraform.io/) (my preferred option).
+This will compile function and output them into `dist/`. The `package` script will create a zip file or you can use the files directly. Deploy by manually uploading, [aws-cli](https://aws.amazon.com/cli/), or with a tool like [Terraform](https://terraform.io/) (my preferred option).
 
 The handler will be `{filename}.default` if you are using the default export, so if deploying the sample API function the handler will be `api.default`.
 
